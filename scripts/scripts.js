@@ -146,8 +146,8 @@ async function getAndApplyRenderDecisions() {
 let alloyLoadedPromise = initWebSDK('./alloy.js', {
     datastreamId: 'ce2eeece-8320-4043-b94a-4c13f308248d',
     orgId: '73D97EE25CCCE8260A495EBD@AdobeOrg',
-  });;
-if (getMetadata('target') {
+  });
+if (getMetadata('target')) {
   alloyLoadedPromise.then(() => getAndApplyRenderDecisions());
 }
 
