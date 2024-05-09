@@ -41,6 +41,13 @@ async function loadFonts() {
     // do nothing
   }
 }
+function getMetadata(name, doc = document) {
+  const attr = name && name.includes(':') ? 'property' : 'name';
+  const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)]
+    .map((m) => m.content)
+    .join(', ');
+  return meta || '';
+}
 
 /**
  * Builds all synthetic blocks in a container element.
