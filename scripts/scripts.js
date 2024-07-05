@@ -141,12 +141,38 @@ async function getAndApplyRenderDecisions() {
     // Report shown decisions
     window.alloy('sendEvent', {
       xdm: {
-        eventType: 'decisioning.propositionDisplay',
-        _experience: {
-          decisioning: { propositions },
+
+    _experience: {
+        decisioning: {
+            propositions
         },
-      },
-    });
+    },
+    web: {
+        webPageDetails: {
+            name: "MMT:Homepage",
+            pageViews: {
+                id: "",
+                value: 1
+            },
+            server: "mmt.com",
+            siteSection: "home",
+            URL: "https://www.makemytrip.com"
+        }
+    } {
+
+        custData: {
+            custId: "111212",
+            loginStatus: "logged in"
+        },
+        page: {
+            pageName: "MMT:Homepage",
+            pageType: "home",
+            language: "EN"
+        }
+    }
+}
+},
+                 });
   });
 }
 
