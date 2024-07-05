@@ -141,6 +141,7 @@ async function getAndApplyRenderDecisions() {
     // Report shown decisions and Page View Call
     window.alloy('sendEvent', {
         xdm: {
+          eventType: "web.webpagedetails.pageViews",
             _experience: {
                 decisioning: {
                     propositions: {}
