@@ -138,42 +138,40 @@ async function getAndApplyRenderDecisions() {
 
   // Reporting is deferred to avoid long tasks
   window.setTimeout(() => {
-    // Report shown decisions
+    // Report shown decisions and Page View Call
     window.alloy('sendEvent', {
-      xdm: {
-
-    _experience: {
-        decisioning: {
-            propositions
-        },
-    },
-    web: {
-        webPageDetails: {
-            name: "MMT:Homepage",
-            pageViews: {
-                id: "",
-                value: 1
+        xdm: {
+            _experience: {
+                decisioning: {
+                    propositions: {}
+                }
             },
-            server: "mmt.com",
-            siteSection: "home",
-            URL: "https://www.makemytrip.com"
+            web: {
+                webPageDetails: {
+                    name: "MMT:Homepage",
+                    pageViews: {
+                        id: "",
+                        value: 1
+                    },
+                    server: "mmt.com",
+                    siteSection: "home",
+                    URL: "https://www.makemytrip.com"
+                }
+            },
+            custData: {
+                custId: "111212",
+                loginStatus: "logged in"
+            },
+            page: {
+                pageName: "MMT:Homepage",
+                pageType: "home",
+                language: "EN"
+            }
         }
-    } {
+    });
+});
 
-        custData: {
-            custId: "111212",
-            loginStatus: "logged in"
-        },
-        page: {
-            pageName: "MMT:Homepage",
-            pageType: "home",
-            language: "EN"
-        }
-    }
-}
-},
-                 });
-  });
+ 
 }
 
 let alloyLoadedPromise = initWebSDK('./alloy.js', {
