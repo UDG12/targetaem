@@ -175,8 +175,8 @@ async function getAndApplyRenderDecisions() {
 }
 
 let alloyLoadedPromise = initWebSDK('./alloy.js', {
-    datastreamId: 'ce2eeece-8320-4043-b94a-4c13f308248d',
-    orgId: '73D97EE25CCCE8260A495EBD@AdobeOrg',
+    datastreamId: 'b912de2d-1975-4376-9ef3-1cb54a82cea1',
+    orgId: '1E0D22CE527845790A490D4D@AdobeOrg',
   });
 //alloyLoadedPromise.then(() => getAndApplyRenderDecisions());
 if (getMetadata('target')) {
